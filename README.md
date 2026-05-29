@@ -29,7 +29,7 @@ A personal dashboard for football photographers to log the matches they've shot 
 Prerequisites: Node.js 20+ and npm.
 
 ```bash
-git clone https://github.com/yourname/match-day-tracker.git
+git clone https://github.com/weinde/match-day-tracker.git
 cd match-day-tracker
 npm install
 ng serve
