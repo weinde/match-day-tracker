@@ -2,4 +2,13 @@
   position: relative;
   height: 240px;
   width: 100%;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #e7e5e4;
+  border-radius: 0.75rem;
+
+  @media (min-width: 576px) {
+    height: 280px;
+    padding: 1.5rem;
+  }
 }

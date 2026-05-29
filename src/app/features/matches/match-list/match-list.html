@@ -1,26 +1,26 @@
 <header class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="mb-0">My Matches</h1>
-  <a class="btn btn-primary" routerLink="/matches/new">+ New Match</a>
+  <h1 class="h3 mb-0">My Matches</h1>
+  <span class="text-muted small">{{ matches().length }} logged</span>
 </header>
 
 @if (matches().length > 0) {
   <section class="mb-4">
-    <h2 class="h5 mb-3">Shots over time</h2>
+    <h2 class="h6 text-muted mb-3">Shots over time</h2>
     <app-match-chart [matches]="matches()" />
   </section>
 }
 
 @if (matches().length === 0) {
-  <div class="alert alert-light text-center py-5">
-    <p class="mb-3">No matches logged yet.</p>
+  <div class="text-center py-5">
+    <div class="display-1 mb-3">📸</div>
+    <h2 class="h5">No matches yet</h2>
+    <p class="text-muted mb-4">Start tracking the matches you've photographed.</p>
     <a class="btn btn-primary" routerLink="/matches/new">Log your first match</a>
   </div>
 } @else {
-  <div class="list-group">
-    @for (match of matches(); track match.id) {
-      <app-match-card
-        [match]="match"
-        (delete)="onDelete($event)" />
-    }
-  </div>
+  @for (match of matches(); track match.id) {
+    <app-match-card
+      [match]="match"
+      (delete)="onDelete($event)" />
+  }
 }

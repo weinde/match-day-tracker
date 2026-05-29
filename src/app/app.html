@@ -1,7 +1,13 @@
-<nav class="navbar navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-light bg-white border-bottom sticky-top">
   <div class="container">
-    <a class="navbar-brand" routerLink="/matches">Match Day Tracker</a>
-    <a class="btn btn-primary" routerLink="/matches/new">+ New Match</a>
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" routerLink="/matches">
+      <span class="fs-4">📸</span>
+      <span>Match Day</span>
+    </a>
+    <a class="btn btn-primary btn-sm" routerLink="/matches/new">
+      <span class="d-none d-sm-inline">+ New Match</span>
+      <span class="d-sm-none">+</span>
+    </a>
   </div>
 </nav>
 

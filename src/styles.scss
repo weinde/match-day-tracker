@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  // Override Bootstrap's blue with something photographer-y
+  --bs-primary: #d97706;        // warm amber
+  --bs-primary-rgb: 217, 119, 6;
+}
+
+body {
+  background-color: #fafaf9;
+  color: #1c1917;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+// More breathing room on mobile
+main.container {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+// Smoother focus states
+.form-control:focus,
+.form-select:focus,
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.2);
+  border-color: var(--bs-primary);
+}

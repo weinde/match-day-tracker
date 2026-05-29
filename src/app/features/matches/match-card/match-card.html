@@ -1,22 +1,36 @@
-<article class="list-group-item">
-  <div class="d-flex justify-content-between align-items-start">
-    <div>
-      <h5 class="mb-1">{{ match().homeTeam }} vs {{ match().awayTeam }}</h5>
-      <p class="mb-1 text-muted">
-        {{ match().date }} · {{ match().venue }} · {{ match().weather }}
-      </p>
-      <small>{{ match().shotsCount }} shots taken</small>
+<article class="match-card">
+  <div class="match-card__main">
+    <h3 class="match-card__teams">
+      {{ match().homeTeam }}
+      <span class="text-muted fw-normal mx-1">vs</span>
+      {{ match().awayTeam }}
+    </h3>
+    <p class="match-card__meta">
+      <span>{{ match().date }}</span>
+      <span class="match-card__dot">·</span>
+      <span>{{ match().venue }}</span>
+    </p>
+    <div class="match-card__stats">
+      <span class="badge bg-light text-dark border">
+        📷 {{ match().shotsCount }} shots
+      </span>
+      <span class="badge bg-light text-dark border">
+        {{ match().weather | weatherIcon }} {{ match().weather }}
+      </span>
     </div>
-    <div class="btn-group btn-group-sm">
-      <a class="btn btn-outline-secondary"
-         [routerLink]="['/matches', match().id, 'edit']">
-        Edit
-      </a>
-      <button class="btn btn-outline-danger"
-              type="button"
-              (click)="delete.emit(match())">
-        Delete
-      </button>
-    </div>
+  </div>
+
+  <div class="match-card__actions">
+    <a class="btn btn-sm btn-outline-secondary"
+       [routerLink]="['/matches', match().id, 'edit']"
+       aria-label="Edit match">
+      Edit
+    </a>
+    <button class="btn btn-sm btn-outline-danger"
+            type="button"
+            (click)="delete.emit(match())"
+            aria-label="Delete match">
+      Delete
+    </button>
   </div>
 </article>
